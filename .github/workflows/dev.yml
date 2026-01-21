@@ -1,0 +1,39 @@
+name: Hugo Build & Deploy
+
+on:
+  push:
+    branches:
+      - main  # 当 main 分支有更新时触发
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. 检出仓库代码
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2. 安装 Hugo
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.154.5'   # 和你本地一致
+          extended: true             # 使用 extended 版本以支持 Sass/SCSS
+
+      # 3. 生成 package.json 并安装 Node 依赖（Toha 前端需要）
+      - name: Install Node dependencies
+        run: |
+          hugo mod npm pack
+          npm install
+
+      # 4. 构建网站
+      - name: Build Hugo site
+        run: hugo --minify
+
+      # 5. 部署到 GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
