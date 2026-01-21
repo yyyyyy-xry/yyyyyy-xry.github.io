@@ -70,7 +70,7 @@ params:
 
   # Logo（占位，后续可替换）
   logo:
-   mian: /images/site/favicon.png
+    mian: /images/site/favicon.png
     favicon: /images/site/favicon.png
     inverted: /images/site/inverted.png
 
