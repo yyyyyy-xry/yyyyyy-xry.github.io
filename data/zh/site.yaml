@@ -1,0 +1,19 @@
+# Copyright Notice
+copyright: © 2026 yyyyyy. 版权所有.
+
+# Disclaimer for the footer
+disclaimer: "本博客使用 MIT 许可证。你可以将内容用于非商业、商业或私人用途。你可以修改或分发博客内容而无需征得作者许可。然而，博客作者不提供任何担保，也不对使用过程中的任何问题承担责任。"
+
+# Meta description for your site
+description: yyyyyy 的技术博客，分享编程、学习和个人项目经验。
+
+# Custom menus (optional)
+customMenus: []
+
+# OpenGraph headers for social sharing
+openGraph:
+  title: yyyyyy 的技术博客
+  type: website
+  description: 分享编程、学习和个人项目经验
+  image: images/author/avatar.png
+  url: https://yyyyyy-xry.github.io

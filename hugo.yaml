@@ -30,12 +30,12 @@ languages:
   zh:
     languageCode: zh-cn
     languageName: 中文
-    title: "yyyyyy-xry · 技术博客"
+    title: "yyyyyy · 博客"
     weight: 1
   en:
     languageCode: en
     languageName: English
-    title: "yyyyyy-xry · Tech Blog"
+    title: "yyyyyy · Blog"
     weight: 2
 
 defaultContentLanguage: zh
@@ -70,7 +70,7 @@ params:
 
   # Logo（占位，后续可替换）
   logo:
-    mian: /images/site/favicon.png
+    main: /images/site/favicon.png
     favicon: /images/site/favicon.png
     inverted: /images/site/inverted.png
 

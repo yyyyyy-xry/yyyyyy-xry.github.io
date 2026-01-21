@@ -1,0 +1,19 @@
+# Copyright Notice
+copyright: © 2026 yyyyyy. All rights reserved.
+
+# Disclaimer for the footer
+disclaimer: "This blog uses the MIT license. You can use the content for non-commercial, commercial, or private purposes. You may modify or distribute the content without asking for permission from the author. However, the author provides no warranty and assumes no liability for any issues arising from the use of this blog."
+
+# Meta description for your site
+description: yyyyyy's tech blog, sharing programming, learning, and personal project experiences.
+
+# Custom menus (optional)
+customMenus: []
+
+# OpenGraph headers for social sharing
+openGraph:
+  title: yyyyyy's Tech Blog
+  type: website
+  description: Sharing programming, learning, and personal project experiences
+  image: images/author/avatar.png
+  url: https://yyyyyy-xry.github.io

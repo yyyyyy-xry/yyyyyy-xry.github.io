@@ -1,5 +1,5 @@
 # some information about you
-name: "薛茹月"
+name: "Xue RuYue"
 nickname: "yyyyyy"
 image: "images/avatar.png"
 
@@ -9,6 +9,7 @@ greeting: "Hi, I am"
 # give your contact information. they will be used in the footer
 contactInfo:
   email: "1563261495@qq.com"
+  github: yyyyyy-xry
   # phone: "19102645269"
   # stack-overflow:
   #   icon: stack-overflow
@@ -17,5 +18,4 @@ contactInfo:
 
 # a summary of what you do
 summary:
-  - Backend & Systems Programming Developer
   - Focus on Java, Python
