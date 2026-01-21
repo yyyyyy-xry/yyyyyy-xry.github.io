@@ -13,6 +13,8 @@ jobs:
       # 1. 检出仓库代码
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          submodules: true  # 如果你使用 Hugo Modules，这个最好开启
 
       # 2. 安装 Hugo
       - name: Setup Hugo
@@ -31,9 +33,11 @@ jobs:
       - name: Build Hugo site
         run: hugo --minify
 
-      # 5. 部署到 GitHub Pages
+      # 5. 部署到 GitHub Pages（发布到 gh-pages 分支）
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
+          publish_branch: gh-pages   # 指定发布分支
+          keep_files: false          # 不保留旧文件，每次完整刷新
