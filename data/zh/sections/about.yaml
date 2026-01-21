@@ -46,17 +46,17 @@ badges:
   - type: certification
     name: 英语六级 (CET-6)
     url: "#"
-    badge: "images/badges/cet6-grade.png"
+    badge: "/images/badges/cet6-grade.png"
 
   - type: certification
     name: 中国大学生计算机设计大赛 · 国家级一等奖
     url: "#"
-    badge: "images/badges/js-g1.jpg"
+    badge: "/images/badges/js-g1.jpg"
 
   - type: certification
     name: 蓝桥杯 · 省级二等奖
     url: "#"
-    badge: "images/badges/lqb-s2.jpg"
+    badge: "/images/badges/lqb-s2.jpg"
 
   - type: soft-skill-indicator
     name: 团队协作
