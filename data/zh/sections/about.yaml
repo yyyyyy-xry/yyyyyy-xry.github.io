@@ -42,21 +42,22 @@ resourceLinks:
     url: "files/resume.pdf"
 
 # 证书和技能展示
+# 使用图床 https://postimages.org/
 badges:
   - type: certification
     name: 英语六级 (CET-6)
     url: "#"
-    badge: "/images/badges/cet6-grade.png"
+    badge: "https://i.postimg.cc/QxwF99X7/cet6_grade.png"
 
   - type: certification
     name: 中国大学生计算机设计大赛 · 国家级一等奖
     url: "#"
-    badge: "/images/badges/js-g1.jpg"
+    badge: "https://i.postimg.cc/Yqh4Cfwt/js_g1.jpg"
 
   - type: certification
     name: 蓝桥杯 · 省级二等奖
     url: "#"
-    badge: "/images/badges/lqb-s2.jpg"
+    badge: "https://i.postimg.cc/wxWyz4ng/lqb_s2.jpg"
 
   - type: soft-skill-indicator
     name: 团队协作
