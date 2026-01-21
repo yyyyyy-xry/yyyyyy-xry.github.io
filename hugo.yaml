@@ -70,7 +70,9 @@ params:
 
   # Logo（占位，后续可替换）
   logo:
-    # favicon: /images/site/favicon.png
+   mian: /images/site/favicon.png
+    favicon: /images/site/favicon.png
+    inverted: /images/site/inverted.png
 
   # GitHub 仓库信息（面试官非常常看）
   gitRepo: https://github.com/yyyyyy-xry/yyyyyy-xry.github.io
