@@ -37,7 +37,7 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          personal_token: ${{ secrets.GH_PAT }}
           publish_dir: ./public
           publish_branch: gh-pages   # 指定发布分支
           keep_files: false          # 不保留旧文件，每次完整刷新
