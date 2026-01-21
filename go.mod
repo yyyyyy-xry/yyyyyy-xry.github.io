@@ -1,0 +1,5 @@
+module github.com/yyyyyy-xry/yyyyyy-xry.github.io
+
+go 1.22.2
+
+require github.com/hugo-toha/toha/v4 v4.13.0 // indirect
