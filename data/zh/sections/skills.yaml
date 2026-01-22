@@ -1,0 +1,81 @@
+# section information
+section:
+  name: 技术栈
+  id: skills
+  enable: true
+  weight: 2
+  showOnNavbar: true
+  filter: true
+
+# filter buttons
+buttons:
+  - name: 全部
+    filter: "all"
+  - name: 后端基础
+    filter: "backend"
+  - name: 编程语言
+    filter: "language"
+  - name: 中间件 / 数据
+    filter: "middleware"
+  - name: 系统 / 工程化
+    filter: "system"
+
+# Your Skills
+skills:
+  - name: Java 后端开发
+    logo: /images/skills/java2.png
+    summary: "熟悉 Spring Boot、MyBatis-Plus 等后端开发框架，具备接口设计、权限控制、限流与业务系统落地经验。"
+    categories: ["backend", "language"]
+    url: "https://www.oracle.com/java/"
+
+  - name: Python 后端开发
+    logo: /images/skills/python.png
+    summary: "使用 Python 进行后端服务开发，熟悉 FastAPI、SQLAlchemy"
+    categories: ["backend", "language"]
+    url: "https://www.python.org/"
+
+  - name: C 语言 / 系统编程
+    logo: /images/skills/c.png
+    summary: "具备 C 语言项目实践经验，基于原生 Socket 实现异步非阻塞反向代理，理解 Reactor 并发模型。"
+    categories: ["system", "language"]
+
+  - name: Rust
+    logo: /images/skills/rust.png
+    summary: "了解 Rust 语言及其异步编程模型，在网络服务与系统方向进行过学习与实践探索。"
+    categories: ["language", "system"]
+    url: "https://www.rust-lang.org/"
+
+  - name: MySQL
+    logo: /images/skills/mysql.jpg
+    summary: "熟练使用 MySQL 进行业务数据建模与 CRUD 开发，理解常见索引与事务使用场景。"
+    categories: ["middleware"]
+    url: "https://www.mysql.com/"
+
+  - name: Redis
+    logo: /images/skills/redis.png
+    summary: "在项目中使用 Redis 实现缓存、限流、排行榜及 Session 管理等功能。"
+    categories: ["middleware"]
+    url: "https://redis.io/"
+
+  - name: PostgreSQL
+    logo: /images/skills/postgresql.png
+    summary: "具备 PostgreSQL 使用经验，配合 SQLAlchemy 完成业务数据模型设计与接口实现。"
+    categories: ["middleware"]
+    url: "https://www.postgresql.org/"
+
+  - name: Docker
+    logo: /images/skills/docker.png
+    summary: "了解 Docker 基本使用，具备容器化部署后端服务的实践经验。"
+    categories: ["system"]
+    url: "https://www.docker.com/"
+
+  - name: Linux
+    logo: /images/skills/linux.png
+    summary: "熟悉 Linux 开发与部署环境，能够进行基本的服务部署与问题排查。"
+    categories: ["system"]
+
+  - name: Git
+    logo: /images/skills/git.png
+    summary: "熟悉 Git 版本控制与团队协作流程，具备实际项目协作经验。"
+    categories: ["backend"]
+    url: "https://git-scm.com/"
