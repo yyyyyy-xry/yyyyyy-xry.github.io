@@ -1,0 +1,89 @@
+# =========================
+# 教育经历 Section 配置
+# =========================
+
+section:
+  name: 教育经历
+  id: education
+  template: sections/education.html
+  enable: true
+  weight: 4
+  showOnNavbar: true
+
+# =========================
+# 教育经历列表
+# =========================
+
+degrees:
+  # -------------------------
+  # 本科阶段
+  # -------------------------
+  - name: 本科 · 软件工程
+    icon: fa-graduation-cap
+    timeframe: 2023 - 至今
+    institution:
+      name: 电子科技大学
+      url: "https://www.uestc.edu.cn/"
+      logo: /images/education/uestc-all.png # 占位 Logo，后续可替换
+
+    # 成绩信息（按“排名”展示）
+    grade:
+      scale: 专业排名
+      achieved: 40
+      outOf: 95
+
+    # 主修课程（表格形式展示，包含成绩）
+    takenCourses:
+      showGrades: true # 以表格形式展示
+      collapseAfter: 4 # 超过 4 门后折叠
+      courses:
+        - name: 数据结构与算法
+          achieved: 92
+          outOf: 100
+        - name: 计算机系统结构
+          achieved: 93
+          outOf: 100
+        - name: 操作系统原理与实践
+          achieved: 83
+          outOf: 100
+        - name: 计算机网络系统
+          achieved: 87
+          outOf: 100
+        - name: 编译技术
+          achieved: 96
+          outOf: 100
+        - name: 开源软件内核分析与开发
+          achieved: 83
+          outOf: 100
+        - name: 大型软件系统设计与架构模式
+          achieved: 96
+          outOf: 100
+        - name: 系统中间件与云虚拟化
+          achieved: 100
+          outOf: 100
+
+    # 可自定义扩展模块（为以后留好结构）
+    # customSections:
+    #   - name: 专业方向
+    #     content: 系统开发与计算机网络方向
+    #   - name: 毕业设计
+    #     content: 《基于高性能网络模型的服务系统设计与实现》
+
+  # -------------------------
+  # 高中阶段
+  # -------------------------
+  - name: 高中
+    icon: fa-school
+    timeframe: 2020 - 2023
+    institution:
+      name: 成都市金牛区协同外语学校
+      url: "http://www.cdxtwy.com/"
+      logo: /images/education/high-school.png # 占位 Logo
+
+    grade:
+      scale: 年级排名
+      achieved: 1
+      outOf: 70
+
+    # extracurricularActivities:
+    #   - 班长
