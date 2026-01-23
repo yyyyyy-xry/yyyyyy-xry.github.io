@@ -1,0 +1,92 @@
+# =========================
+# 项目经历 Section
+# =========================
+
+section:
+  name: 项目经历
+  id: projects
+  enable: true
+  weight: 5
+  showOnNavbar: true
+
+# =========================
+# 项目分类筛选
+# =========================
+buttons:
+  - name: 全部
+    filter: "all"
+  - name: 后端系统
+    filter: "backend"
+  - name: 网络基础设施
+    filter: "infra"
+  - name: 学术研究
+    filter: "academic"
+
+# =========================
+# 项目列表
+# =========================
+projects:
+  # -------------------------
+  # Rust 高性能反向代理
+  # -------------------------
+  - name: 基于 Rust 的高性能反向代理服务
+    # logo: /images/sections/projects/rust.png
+    role: 核心开发者
+    timeline: "2025"
+    # repo: https://github.com/yourname/rust-reverse-proxy
+    summary: |
+      使用 Rust 实现的高性能反向代理服务，基于 epoll 的 Reactor 模型，
+      支持 HTTP 与 WebSocket 转发，对比分析同步多线程模型与异步模型的性能差异，
+      并实现 read-while-send 的流式转发架构。
+    tags: ["backend", "rust", "network", "infra"]
+
+  # -------------------------
+  # C 语言反向代理 + HTTPS
+  # -------------------------
+  - name: C 语言反向代理与 HTTPS 支持
+    # logo: /images/sections/projects/c.png
+    role: 独立开发
+    timeline: "2025"
+    summary: |
+      基于原生 Socket 的 C 语言反向代理实现，
+      使用同步多线程模型与 epoll 主从 Reactor 架构进行对比。
+    tags: ["backend", "c", "network", "infra"]
+
+  # -------------------------
+  # eBPF 系统可观测性项目
+  # -------------------------
+  # - name: 基于 eBPF 的系统与网络可观测性监控
+  #   # logo: /images/sections/projects/ebpf.png
+  #   role: 核心开发
+  #   timeline: "2025"
+  #   summary: |
+  #     基于 BCC/eBPF 构建可复用的内核观测程序模板，
+  #     实现 TCP 建连成功率、延迟等关键指标监控，
+  #     用于反向代理与微服务系统的性能分析与故障定位。
+  #   tags: ["infra", "academic", "ebpf", "linux"]
+
+  # -------------------------
+  # 云-边-端设备管理系统
+  # -------------------------
+  - name: 云-边-端轻量化设备管理系统
+    # logo: /images/sections/projects/cloud.png
+    role: 系统设计与后端开发
+    timeline: "2024"
+    summary: |
+      面向校园场景设计的云-边-端轻量化系统，
+      支持设备长连接、心跳保活、状态上报与指令下发，
+      实现设备服务器、通信协议与数据交互模块的高度复用。
+    tags: ["backend", "distributed", "iot", "infra"]
+
+  # -------------------------
+  # 通用用户管理系统（后端）
+  # -------------------------
+  - name: 高度可复用的用户管理与认证系统
+    # logo: /images/sections/projects/user.png
+    role: 后端开发
+    timeline: "2025"
+    summary: |
+      设计并实现通用用户管理系统，
+      支持用户名/密码与手机号/验证码双认证模式，
+      用户、分组、权限解耦设计，上层业务服务按需调用
+    tags: ["backend", "system-design", "auth", "infra"]
