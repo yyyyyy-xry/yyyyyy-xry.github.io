@@ -50,4 +50,66 @@ style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description></item></channel></rss>
+&lt;/div&gt;</description></item><item><title>java note</title><link>https://yyyyyy-xry.github.io/notes/java/java/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yyyyyy-xry.github.io/notes/java/java/</guid><description>&lt;div class="note-card "&gt;
+&lt;div class="item"&gt;
+&lt;h5 class="note-title"&gt;&lt;span&gt;Java 各类集合 / 数组之间的标准互转套路&lt;/span&gt;&lt;/h5&gt;
+&lt;div class="card"&gt;
+&lt;div class="card-body"&gt;&lt;h2 id="核心认知"&gt;核心认知&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;对象流 vs. 基本类型流
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Stream&amp;lt;T&amp;gt;：List&amp;lt;Integer&amp;gt; / Set&amp;lt;Integer&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;IntStream / LongStream / DoubleStream：int[] / long[] / double[]&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="list--set--map-之间的转换"&gt;List / Set / Map 之间的转换&lt;/h2&gt;
+&lt;h3 id="1-list--set去重--保序"&gt;1. List ⇄ Set（去重 / 保序）&lt;/h3&gt;
+&lt;h5 id="list--set去重"&gt;List → Set（去重）&lt;/h5&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-java" data-lang="java"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;// 使用Stream&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Set&lt;span style="color:#f92672"&gt;&amp;lt;&lt;/span&gt;Integer&lt;span style="color:#f92672"&gt;&amp;gt;&lt;/span&gt; set &lt;span style="color:#f92672"&gt;=&lt;/span&gt; list.&lt;span style="color:#a6e22e"&gt;stream&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .&lt;span style="color:#a6e22e"&gt;collect&lt;/span&gt;(Collectors.&lt;span style="color:#a6e22e"&gt;toSet&lt;/span&gt;());
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;// ⚠️保序去重&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Set&lt;span style="color:#f92672"&gt;&amp;lt;&lt;/span&gt;Integer&lt;span style="color:#f92672"&gt;&amp;gt;&lt;/span&gt; set &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;new&lt;/span&gt; LinkedHashSet&lt;span style="color:#f92672"&gt;&amp;lt;&amp;gt;&lt;/span&gt;(list);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id="set--list"&gt;Set → List&lt;/h5&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;List&amp;lt;Integer&amp;gt; list = set.stream().toList();
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="2-map--list--set高频"&gt;2. Map ⇄ List / Set（高频）&lt;/h3&gt;
+&lt;h4 id="map--key--value-集合"&gt;Map → key / value 集合&lt;/h4&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;Map&amp;lt;String, Integer&amp;gt; map = ...
+Set&amp;lt;String&amp;gt; keys = map.keySet();
+Collection&amp;lt;Integer&amp;gt; values = map.values();
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id="map--listentry"&gt;Map → List（entry）&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-java" data-lang="java"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;List&lt;span style="color:#f92672"&gt;&amp;lt;&lt;/span&gt;Map.&lt;span style="color:#a6e22e"&gt;Entry&lt;/span&gt;&lt;span style="color:#f92672"&gt;&amp;lt;&lt;/span&gt;String, Integer&lt;span style="color:#f92672"&gt;&amp;gt;&amp;gt;&lt;/span&gt; entries &lt;span style="color:#f92672"&gt;=&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;new&lt;/span&gt; ArrayList&lt;span style="color:#f92672"&gt;&amp;lt;&amp;gt;&lt;/span&gt;(map.&lt;span style="color:#a6e22e"&gt;entrySet&lt;/span&gt;());
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id="list--map元素本身当-key"&gt;list → map（元素本身当 key）&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-java" data-lang="java"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;List&lt;span style="color:#f92672"&gt;&amp;lt;&lt;/span&gt;Integer&lt;span style="color:#f92672"&gt;&amp;gt;&lt;/span&gt; list &lt;span style="color:#f92672"&gt;=&lt;/span&gt; ...
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Map&lt;span style="color:#f92672"&gt;&amp;lt;&lt;/span&gt;Integer, Integer&lt;span style="color:#f92672"&gt;&amp;gt;&lt;/span&gt; map &lt;span style="color:#f92672"&gt;=&lt;/span&gt; list.&lt;span style="color:#a6e22e"&gt;stream&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .&lt;span style="color:#a6e22e"&gt;collect&lt;/span&gt;(Collectors.&lt;span style="color:#a6e22e"&gt;toMap&lt;/span&gt;(
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; x &lt;span style="color:#f92672"&gt;-&amp;gt;&lt;/span&gt; x, &lt;span style="color:#75715e"&gt;// 数本身&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; x &lt;span style="color:#f92672"&gt;-&amp;gt;&lt;/span&gt; 1, &lt;span style="color:#75715e"&gt;// 先记一次&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; Integer::sum &lt;span style="color:#75715e"&gt;// 处理重复 key&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ));
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="list--set--数组"&gt;List / Set ⇄ 数组&lt;/h2&gt;
+&lt;h3 id="1-list-integer--int"&gt;1. List&amp;lt; Integer&amp;gt; ⇄ int[]&lt;/h3&gt;
+&lt;h5 id="list-integer--int"&gt;List&amp;lt; Integer&amp;gt; → int[]&lt;/h5&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-java" data-lang="java"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;int&lt;/span&gt;&lt;span style="color:#f92672"&gt;[]&lt;/span&gt; arr &lt;span style="color:#f92672"&gt;=&lt;/span&gt; list.&lt;span style="color:#a6e22e"&gt;stream&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .&lt;span style="color:#a6e22e"&gt;mapToInt&lt;/span&gt;(Integer::intValue)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .&lt;span style="color:#a6e22e"&gt;toArray&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id="int--list-integer"&gt;int[] → List&amp;lt; Integer&amp;gt;&lt;/h5&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-java" data-lang="java"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;List&lt;span style="color:#f92672"&gt;&amp;lt;&lt;/span&gt;Integer&lt;span style="color:#f92672"&gt;&amp;gt;&lt;/span&gt; list &lt;span style="color:#f92672"&gt;=&lt;/span&gt; Arrays.&lt;span style="color:#a6e22e"&gt;stream&lt;/span&gt;(arr)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .&lt;span style="color:#a6e22e"&gt;boxed&lt;/span&gt;() &lt;span style="color:#75715e"&gt;// 📌boxed()：基本类型 → 包装类型&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .&lt;span style="color:#a6e22e"&gt;toList&lt;/span&gt;(); &lt;span style="color:#75715e"&gt;// 使用toList方法，得到的list是不可变的&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="2-set-integer--int"&gt;2. Set&amp;lt; Integer&amp;gt; ⇄ int[]&lt;/h3&gt;
+&lt;h5 id="set--int"&gt;Set → int[]&lt;/h5&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;int[] arr = set.stream()
+.mapToInt(Integer::intValue)
+.toArray();
+&lt;/code&gt;&lt;/pre&gt;&lt;h5 id="int--set"&gt;int[] → Set&lt;/h5&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;Set&amp;lt;Integer&amp;gt; set = Arrays.stream(arr)
+.boxed()
+.collect(Collectors.toSet());
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="速查表"&gt;速查表&lt;/h2&gt;
+&lt;p&gt;| 目标 | 写法 |
+|&lt;/p&gt;</description></item></channel></rss>
