@@ -107,16 +107,4 @@ Set<Integer> set = Arrays.stream(arr)
         .collect(Collectors.toSet());
 ```
 
-## 速查表
-
-| 目标            | 写法                                                  |
-| --------------- | ----------------------------------------------------- |
-| List → int[]    | `list.stream().mapToInt(Integer::intValue).toArray()` |
-| int[] → List    | `Arrays.stream(arr).boxed().toList()`                 |
-| 去重 List       | `new HashSet<>(list)`                                 |
-| 保序去重        | `new LinkedHashSet<>(list)`                           |
-| char[] → String | `new String(chars)`                                   |
-| String → char[] | `s.toCharArray()`                                     |
-| 词频统计        | `Collectors.toMap(x->x, x->1, Integer::sum)`          |
-
 {{< /note >}}
