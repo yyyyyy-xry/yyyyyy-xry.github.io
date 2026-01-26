@@ -58,6 +58,7 @@ Collection&amp;lt;Integer&amp;gt; values = map.values();
 &lt;pre tabindex="0"&gt;&lt;code&gt;Set&amp;lt;Integer&amp;gt; set = Arrays.stream(arr)
 .boxed()
 .collect(Collectors.toSet());
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="速查表"&gt;速查表&lt;/h2&gt;
-&lt;p&gt;| 目标 | 写法 |
-|&lt;/p&gt;</description></item></channel></rss>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description></item></channel></rss>
